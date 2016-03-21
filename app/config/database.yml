@@ -16,7 +16,10 @@ default: &default
   username: root
   password:
   host: localhost
-  socket: /var/lib/mysql/mysql.sock
+# if linux
+#  socket: /var/lib/mysql/mysql.sock
+# if mac
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default

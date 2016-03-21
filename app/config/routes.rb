@@ -53,6 +53,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get '/' => 'top#index'
+
   resources :user do
     collection do
       get :index
