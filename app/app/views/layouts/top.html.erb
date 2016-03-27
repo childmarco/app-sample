@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html lang="ja">
-
+<html>
 <head>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <!-- /.website title -->
+  <title>Backyard Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <title>Creative - Start Bootstrap Theme</title>
-
-  <!-- Custom Fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
-
-
-  <!--<link rel="stylesheet" href="css/animate.min.css" type="text/css">-->
-  <!--<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">-->
-  <!--<link rel="stylesheet" href="css/creative.css" type="text/css">-->
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic"/>
 
   <%= stylesheet_link_tag 'top', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'top', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
+<body data-spy="scroll" data-target="#navbar-scroll">
+
+
 <%= yield %>
 
+<!-- /.footer -->
+<footer id="footer">
+  <div class="container">
+    <div class="col-sm-4 col-sm-offset-4">
+      <!-- /.social links -->
+      <div class="social text-center">
+        <ul>
+          <li><a class="wow fadeInUp" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+          <li>
+            <a class="wow fadeInUp" href="https://www.facebook.com/" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a class="wow fadeInUp" href="https://plus.google.com/" data-wow-delay="0.4s"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a class="wow fadeInUp" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="text-center wow fadeInUp" style="font-size: 14px;">Copyright Backyard 2015 - Template by
+        <a href="http://www.moxdesign.com">MoxDesign</a></div>
+      <a href="#" class="scrollToTop"><i class="pe-7s-up-arrow pe-va"></i></a>
+    </div>
+  </div>
+</footer>
+</body>
 </html>

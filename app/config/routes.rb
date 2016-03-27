@@ -59,6 +59,9 @@ Rails.application.routes.draw do
   resources :user do
     collection do
       get :index
+      get :signin
+      post :signup
+      get :signup
     end
   end
 

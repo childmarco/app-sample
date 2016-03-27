@@ -9,11 +9,11 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-/*
-*= require wp/jquery.js
-*= require wp/bootstrap.min.js
-*= require wp/jquery.easing.min.js
-*= require wp/jquery.fittext.js
-*= require wp/wow.min.js
-*= require wp/creative.js
-*/
+
+
+//= require jquery
+//= require bootstrap.min
+//= require custom
+//= require jquery.sticky
+//= require wow.min
+//= require owl.carousel.min

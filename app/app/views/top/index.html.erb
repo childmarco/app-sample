@@ -1,252 +1,514 @@
-<body id="page-top">
 
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
-    </div>
+<!-- /.preloader -->
+<!--<div id="preloader"></div>-->
+<!--<div id="top"></div>-->
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a class="page-scroll" href="#about">About</a>
-        </li>
-        <li>
-          <a class="page-scroll" href="#services">Services</a>
-        </li>
-        <li>
-          <a class="page-scroll" href="#portfolio">Portfolio</a>
-        </li>
-        <li>
-          <a class="page-scroll" href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container-fluid -->
-</nav>
+<!-- NAVIGATION -->
+<div id="menu">
+  <nav class="navbar-wrapper navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand site-name" href="#top"><img src="<%= asset_path "logo2.png" %>" alt="logo"></a>
+      </div>
 
-<header>
-  <div class="header-content">
-    <div class="header-content-inner">
-      <h1>Your Favorite Source of Free Bootstrap Themes</h1>
-      <hr>
-      <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your
-        template and start going, no strings attached!</p>
-      <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-    </div>
-  </div>
-</header>
-
-<section class="bg-primary" id="about">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 text-center">
-        <h2 class="section-heading">We've got what you need!</h2>
-        <hr class="light">
-        <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time!
-          All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No
-          strings attached!</p>
-        <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+      <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+        <ul class="nav navbar-nav">
+          <li><a href="#intro">About</a></li>
+          <li><a href="#feature">Features</a></li>
+          <li><a href="#download">Member</a></li>
+          <!--<li><a href="#package">Pricing</a></li>-->
+          <li><a href="/user/signup">Sign up</a></li>
+          <li><a href="/user/signin">Sign in</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
+</div>
 
-<section id="services">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading">At Your Service</h2>
-        <hr class="primary">
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box">
-          <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+<!-- /.parallax full screen background image -->
+<div class="fullscreen landing parallax" style="background-image:url(<%= asset_path "bg.jpg" %>);" data-img-width="2000" data-img-height="1333" data-diff="100">
 
-          <h3>Sturdy Templates</h3>
+  <div class="overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
 
-          <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+          <!-- /.logo -->
+          <div class="logo wow fadeInDown">
+            <!--<a href=""><img src="<%= asset_path "logo.png" %>" alt="logo"></a>-->
+          </div>
+
+          <!-- /.main title -->
+          <h1 class="wow fadeInLeft">
+            Make lunch more fun and more comfortable
+          </h1>
+
+          <!-- /.header paragraph -->
+          <div class="landing-text wow fadeInUp">
+            <p>Backyard is a modern and customizable landing page template designed to increase conversion of your product. Backyard is flexible to suit any kind of your business. Try now and join with our happy customers!</p>
+          </div>
+
+          <!-- /.header button -->
+          <div class="head-btn wow fadeInLeft">
+            <a href="#feature" class="btn-primary">Features</a>
+            <!--<a href="#download" class="btn-default">Download</a>-->
+          </div>
+
+
+
         </div>
-      </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box">
-          <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
 
-          <h3>Ready to Ship</h3>
+        <!-- /.signup form -->
+        <div class="col-md-5">
 
-          <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box">
-          <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+          <div class="signup-header wow fadeInUp">
+            <h3 class="form-title text-center">Let's Get Started</h3>
+            <%= form_tag('/user/signup',:class => "form-header", :method => :post,:name => 'mainForm') do %>
+                <div class="form-group">
+                  <input class="form-control input-lg" name="email" id="email" type="text" placeholder="Email address" required>
+                </div>
+                <div class="form-group">
+                  <input class="form-control input-lg" name="password" id="password" type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group last">
+                  <input type="submit" class="btn btn-warning btn-block btn-lg" value="Sign up for Lunch">
+                </div>
+                <p class="privacy text-center">We will not share your email. Read our <a href="privacy.html">privacy policy</a>.</p>
+          <% end %>
 
-          <h3>Up to Date</h3>
+            <!--<form class="form-header" action="http://moxdesign.us10.list-manage.com/subscribe/post" role="form" method="POST" id="#">-->
+            <!--</form>-->
+          </div>
 
-          <p class="text-muted">We update dependencies to keep things fresh.</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="service-box">
-          <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-
-          <h3>Made with Love</h3>
-
-          <p class="text-muted">You have to make your websites with love these days!</p>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="no-padding" id="portfolio">
-  <div class="container-fluid">
-    <div class="row no-gutter">
-      <div class="col-lg-4 col-sm-6">
-        <a href="#" class="portfolio-box">
-          <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
-
-          <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
-              <div class="project-category text-faded">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a href="#" class="portfolio-box">
-          <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
-
-          <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
-              <div class="project-category text-faded">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a href="#" class="portfolio-box">
-          <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
-
-          <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
-              <div class="project-category text-faded">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a href="#" class="portfolio-box">
-          <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
-
-          <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
-              <div class="project-category text-faded">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a href="#" class="portfolio-box">
-          <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
-
-          <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
-              <div class="project-category text-faded">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a href="#" class="portfolio-box">
-          <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
-
-          <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
-              <div class="project-category text-faded">
-                Category
-              </div>
-              <div class="project-name">
-                Project Name
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<aside class="bg-dark">
-  <div class="container text-center">
-    <div class="call-to-action">
-      <h2>Free Download at Start Bootstrap!</h2>
-      <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
-    </div>
-  </div>
-</aside>
-
-<section id="contact">
+<!-- /.intro section -->
+<div id="intro">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 text-center">
-        <h2 class="section-heading">Let's Get In Touch!</h2>
-        <hr class="primary">
-        <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get
-          back to you as soon as possible!</p>
-      </div>
-      <div class="col-lg-4 col-lg-offset-2 text-center">
-        <i class="fa fa-phone fa-3x wow bounceIn"></i>
 
-        <p>123-456-6789</p>
+      <!-- /.intro image -->
+      <div class="col-md-6 intro-pic wow slideInLeft">
+        <img src="<%= asset_path "intro-image.jpg" %>" alt="image" class="img-responsive">
       </div>
-      <div class="col-lg-4 text-center">
-        <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
 
-        <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+      <!-- /.intro content -->
+      <div class="col-md-6 wow slideInRight">
+        <h2>Optimize performance through advanced targeting solutions</h2>
+        <p>Good marketing makes the company look smart. <a href="#">Great marketing</a> makes the customer feel smart, - Joe Chernov. Never doubt a small group of thoughtful, committed people can change the world. Indeed, it is the only thing that ever has, - Margaret Mead. The best way to predict the future is to create it, - Peter Drucker.
+        </p>
+
+        <div class="btn-section"><a href="#feature" class="btn-default">Learn More</a></div>
+
       </div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- /.feature section -->
+<div id="feature">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-sm-12 text-center feature-title">
+
+        <!-- /.feature title -->
+        <h2>Recreate your ideas and gain more success</h2>
+        <p>Increase your user loyalty by maintaining mutual communication and nurturing your online community.</p>
+      </div>
+    </div>
+    <div class="row row-feat">
+      <div class="col-md-4 text-center">
+
+        <!-- /.feature image -->
+        <div class="feature-img">
+          <img src="<%= asset_path "feature-image.jpg" %>" alt="image" class="img-responsive wow fadeInLeft">
+        </div>
+      </div>
+
+      <div class="col-md-8">
+
+        <!-- /.feature 1 -->
+        <div class="col-sm-6 feat-list">
+          <i class="pe-7s-notebook pe-5x pe-va wow fadeInUp"></i>
+          <div class="inner">
+            <h4>Marketing Strategy</h4>
+            <p>Good marketing makes the company look smart. Great marketing makes the customer feel smart.
+            </p>
+          </div>
+        </div>
+
+        <!-- /.feature 2 -->
+        <div class="col-sm-6 feat-list">
+          <i class="pe-7s-cash pe-5x pe-va wow fadeInUp" data-wow-delay="0.2s"></i>
+          <div class="inner">
+            <h4>App Monetization</h4>
+            <p>Content builds relationships. Relationships are built on trust. Trust drives revenue. - Andrew Davis</p>
+          </div>
+        </div>
+
+        <!-- /.feature 3 -->
+        <div class="col-sm-6 feat-list">
+          <i class="pe-7s-cart pe-5x pe-va wow fadeInUp" data-wow-delay="0.4s"></i>
+          <div class="inner">
+            <h4>Store Optimization</h4>
+            <p>Never doubt a small group of thoughtful, committed people can change the world. Indeed, it is the only thing that ever has.</p>
+          </div>
+        </div>
+
+        <!-- /.feature 4 -->
+        <div class="col-sm-6 feat-list">
+          <i class="pe-7s-users pe-5x pe-va wow fadeInUp" data-wow-delay="0.6s"></i>
+          <div class="inner">
+            <h4>User Management</h4>
+            <p>Instead of using technology to automate processes, think about using technology to enhance human interaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--&lt;!&ndash; /.feature 2 section &ndash;&gt;-->
+<!--<div id="feature-2">-->
+  <!--<div class="container">-->
+    <!--<div class="row">-->
+
+      <!--&lt;!&ndash; /.feature content &ndash;&gt;-->
+      <!--<div class="col-md-6 wow fadeInLeft">-->
+        <!--<h2>Learn how to make your app marketing efficient</h2>-->
+        <!--<p>Good marketing makes the company look smart. <span class="highlight">Great marketing</span> makes the customer feel smart, - Joe Chernov. Never doubt a small group of thoughtful, committed people can change the world. Indeed, it is the only thing that ever has, - Margaret Mead. The best way to predict the future is to create it, - Peter Drucker.-->
+        <!--</p>-->
+
+        <!--<div class="btn-section"><a href="#download" class="btn-default">Download Now</a></div>-->
+
+      <!--</div>-->
+
+      <!--&lt;!&ndash; /.feature image &ndash;&gt;-->
+      <!--<div class="col-md-6 feature-2-pic wow fadeInRight">-->
+        <!--<img src="<%= asset_path "feature2-image.jpg" %>" alt="macbook" class="img-responsive">-->
+      <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
 
 
-</body>
+<!--&lt;!&ndash; /.download section &ndash;&gt;-->
+<!--<div id="download">-->
+  <!--<div class="action fullscreen parallax" style="background-image:url('images/bg.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">-->
+    <!--<div class="overlay">-->
+      <!--<div class="container">-->
+        <!--<div class="col-md-8 col-md-offset-2 col-sm-12 text-center">-->
+
+          <!--&lt;!&ndash; /.download title &ndash;&gt;-->
+          <!--<h2 class="wow fadeInRight">Would like to know more?</h2>-->
+          <!--<p class="download-text wow fadeInLeft">We'll research the market, identify the right target audience, analyze competitors and avoid users churn to increase retention. Download now for free and join with thousands happy clients.</p>-->
+
+          <!--&lt;!&ndash; /.download button &ndash;&gt;-->
+          <!--<div class="download-cta wow fadeInLeft">-->
+            <!--<a href="#contact" class="btn-secondary">Get Connected</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; /.pricing section &ndash;&gt;-->
+<!--<div id="package">-->
+  <!--<div class="container">-->
+    <!--<div class="text-center">-->
+
+      <!--&lt;!&ndash; /.pricing title &ndash;&gt;-->
+      <!--<h2 class="wow fadeInLeft">PACKAGES</h2>-->
+      <!--<div class="title-line wow fadeInRight"></div>-->
+    <!--</div>-->
+    <!--<div class="row package-option">-->
+
+      <!--&lt;!&ndash; /.package 1 &ndash;&gt;-->
+      <!--<div class="col-sm-3">-->
+        <!--<div class="price-box wow fadeInUp">-->
+          <!--<div class="price-heading text-center">-->
+
+            <!--&lt;!&ndash; /.package icon &ndash;&gt;-->
+            <!--<i class="pe-7s-radio pe-5x"></i>-->
+
+            <!--&lt;!&ndash; /.package name &ndash;&gt;-->
+            <!--<h3>Basic</h3>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.price &ndash;&gt;-->
+          <!--<div class="price-group text-center">-->
+            <!--<span class="dollar">$</span>-->
+            <!--<span class="price">9</span>-->
+            <!--<span class="time">/mo</span>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.package features &ndash;&gt;-->
+          <!--<ul class="price-feature text-center">-->
+            <!--<li><strong>100MB</strong> Disk Space</li>-->
+            <!--<li><strong>200MB</strong> Bandwidth</li>-->
+            <!--<li><strong>2</strong> Subdomains</li>-->
+            <!--<li><strong>5</strong> Email Accounts</li>-->
+            <!--<li><strike>Webmail Support</strike></li>-->
+          <!--</ul>-->
+
+          <!--&lt;!&ndash; /.package button &ndash;&gt;-->
+          <!--<div class="price-footer text-center">-->
+            <!--<a class="btn btn-price" href="#">BUY NOW</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--&lt;!&ndash; /.package 2 &ndash;&gt;-->
+      <!--<div class="col-sm-3">-->
+        <!--<div class="price-box wow fadeInUp" data-wow-delay="0.2s">-->
+          <!--<div class="price-heading text-center">-->
+
+            <!--&lt;!&ndash; /.package icon &ndash;&gt;-->
+            <!--<i class="pe-7s-joy pe-5x"></i>-->
+
+            <!--&lt;!&ndash; /.package name &ndash;&gt;-->
+            <!--<h3>Standard</h3>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.price &ndash;&gt;-->
+          <!--<div class="price-group text-center">-->
+            <!--<span class="dollar">$</span>-->
+            <!--<span class="price">19</span>-->
+            <!--<span class="time">/mo</span>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.package features &ndash;&gt;-->
+          <!--<ul class="price-feature text-center">-->
+            <!--<li><strong>300MB</strong> Disk Space</li>-->
+            <!--<li><strong>400MB</strong> Bandwidth</li>-->
+            <!--<li><strong>5</strong> Subdomains</li>-->
+            <!--<li><strong>10</strong> Email Accounts</li>-->
+            <!--<li><strike>Webmail Support</strike></li>-->
+          <!--</ul>-->
+
+          <!--&lt;!&ndash; /.package button &ndash;&gt;-->
+          <!--<div class="price-footer text-center">-->
+            <!--<a class="btn btn-price" href="#">BUY NOW</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--&lt;!&ndash; /.package 3 &ndash;&gt;-->
+      <!--<div class="col-sm-3">-->
+        <!--<div class="price-box wow fadeInUp" data-wow-delay="0.4s">-->
+          <!--<div class="price-heading text-center">-->
+
+            <!--&lt;!&ndash; /.package icon &ndash;&gt;-->
+            <!--<i class="pe-7s-science pe-5x"></i>-->
+
+            <!--&lt;!&ndash; /.package name &ndash;&gt;-->
+            <!--<h3>Advance</h3>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.price &ndash;&gt;-->
+          <!--<div class="price-group text-center">-->
+            <!--<span class="dollar">$</span>-->
+            <!--<span class="price">29</span>-->
+            <!--<span class="time">/mo</span>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.package features &ndash;&gt;-->
+          <!--<ul class="price-feature text-center">-->
+            <!--<li><strong>1GB</strong> Disk Space</li>-->
+            <!--<li><strong>1GB</strong> Bandwidth</li>-->
+            <!--<li><strong>10</strong> Subdomains</li>-->
+            <!--<li><strong>25</strong> Email Accounts</li>-->
+            <!--<li>Webmail Support</li>-->
+          <!--</ul>-->
+
+          <!--&lt;!&ndash; /.package button &ndash;&gt;-->
+          <!--<div class="price-footer text-center">-->
+            <!--<a class="btn btn-price" href="#">BUY NOW</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--&lt;!&ndash; /.package 4 &ndash;&gt;-->
+      <!--<div class="col-sm-3">-->
+        <!--<div class="price-box wow fadeInUp" data-wow-delay="0.6s">-->
+          <!--<div class="price-heading text-center">-->
+
+            <!--&lt;!&ndash; /.package icon &ndash;&gt;-->
+            <!--<i class="pe-7s-tools pe-5x"></i>-->
+
+            <!--&lt;!&ndash; /.package name &ndash;&gt;-->
+            <!--<h3>Ultimate</h3>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.price &ndash;&gt;-->
+          <!--<div class="price-group text-center">-->
+            <!--<span class="dollar">$</span>-->
+            <!--<span class="price">49</span>-->
+            <!--<span class="time">/mo</span>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.package features &ndash;&gt;-->
+          <!--<ul class="price-feature text-center">-->
+            <!--<li><strong>5GB</strong> Disk Space</li>-->
+            <!--<li><strong>5GB</strong> Bandwidth</li>-->
+            <!--<li><strong>50</strong> Subdomains</li>-->
+            <!--<li><strong>50</strong> Email Accounts</li>-->
+            <!--<li>Webmail Support</li>-->
+          <!--</ul>-->
+
+          <!--&lt;!&ndash; /.package button &ndash;&gt;-->
+          <!--<div class="price-footer text-center">-->
+            <!--<a class="btn btn-price" href="#">BUY NOW</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; /.client section &ndash;&gt;-->
+<!--<div id="client">-->
+  <!--<div class="container">-->
+    <!--<div class="row">-->
+      <!--<div class="col-sm-12 text-center">-->
+        <!--<img alt="client" src="images/company.jpg" class="wow fadeInUp">-->
+        <!--<img alt="client" src="images/company.jpg" class="wow fadeInUp" data-wow-delay="0.2s">-->
+        <!--<img alt="client" src="images/company.jpg" class="wow fadeInUp" data-wow-delay="0.4s">-->
+        <!--<img alt="client" src="images/company.jpg" class="wow fadeInUp" data-wow-delay="0.6s">-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; /.testimonial section &ndash;&gt;-->
+<!--<div id="testi">-->
+  <!--<div class="container">-->
+    <!--<div class="text-center">-->
+      <!--<h2 class="wow fadeInLeft">TESTIMONIALS</h2>-->
+      <!--<div class="title-line wow fadeInRight"></div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+      <!--<div class="col-sm-10 col-sm-offset-1">-->
+        <!--<div id="owl-testi" class="owl-carousel owl-theme wow fadeInUp">-->
+
+          <!--&lt;!&ndash; /.testimonial 1 &ndash;&gt;-->
+          <!--<div class="testi-item">-->
+            <!--<div class="client-pic text-center">-->
+
+              <!--&lt;!&ndash; /.client photo &ndash;&gt;-->
+              <!--<img src="images/client.jpg" alt="client">-->
+            <!--</div>-->
+            <!--<div class="box">-->
+
+              <!--&lt;!&ndash; /.testimonial content &ndash;&gt;-->
+              <!--<p class="message text-center">"We are very happy and satisfied with Backyard service. Our account manager is efficient and very knowledgeable. It was able to create a vast fan base within very short period of time. We would highly recommend Backyard App to anyone."</p>-->
+            <!--</div>-->
+            <!--<div class="client-info text-center">-->
+
+              <!--&lt;!&ndash; /.client name &ndash;&gt;-->
+              <!--Jennifer Lopez, <span class="company">Microsoft</span>-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.testimonial 2 &ndash;&gt;-->
+          <!--<div class="testi-item">-->
+            <!--<div class="client-pic text-center">-->
+
+              <!--&lt;!&ndash; /.client photo &ndash;&gt;-->
+              <!--<img src="images/client.jpg" alt="client">-->
+            <!--</div>-->
+            <!--<div class="box">-->
+
+              <!--&lt;!&ndash; /.testimonial content &ndash;&gt;-->
+              <!--<p class="message text-center">"Everything looks great... Thanks for the quick revision turn around. We were lucky to find you guys and will definitely be using some of your other services in the near future."</p>-->
+            <!--</div>-->
+            <!--<div class="client-info text-center">-->
+
+              <!--&lt;!&ndash; /.client name &ndash;&gt;-->
+              <!--Mike Portnoy, <span class="company">Dream Theater</span>-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.testimonial 3 &ndash;&gt;-->
+          <!--<div class="testi-item">-->
+            <!--<div class="client-pic text-center">-->
+
+              <!--&lt;!&ndash; /.client photo &ndash;&gt;-->
+              <!--<img src="images/client.jpg" alt="client">-->
+            <!--</div>-->
+            <!--<div class="box">-->
+
+              <!--&lt;!&ndash; /.testimonial content &ndash;&gt;-->
+              <!--<p class="message text-center">"Overall, the two reports were very clear and helpful so thank you for the suggestion to do the focus group. We are currently working with our developer to implement some of these suggestions."</p>-->
+            <!--</div>-->
+            <!--<div class="client-info text-center">-->
+
+              <!--&lt;!&ndash; /.client name &ndash;&gt;-->
+              <!--Jennifer Love Hewitt, <span class="company">Lead Vocal</span>-->
+            <!--</div>-->
+          <!--</div>-->
+
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; /.contact section &ndash;&gt;-->
+<!--<div id="contact">-->
+  <!--<div class="contact fullscreen parallax" style="background-image:url('images/bg.jpg');" data-img-width="2000" data-img-height="1334" data-diff="100">-->
+    <!--<div class="overlay">-->
+      <!--<div class="container">-->
+        <!--<div class="row contact-row">-->
+
+          <!--&lt;!&ndash; /.address and contact &ndash;&gt;-->
+          <!--<div class="col-sm-5 contact-left wow fadeInUp">-->
+            <!--<h2><span class="highlight">Get</span> in touch</h2>-->
+            <!--<ul class="ul-address">-->
+              <!--<li><i class="pe-7s-map-marker"></i>1600 Amphitheatre Parkway, Mountain View</br>-->
+                <!--California 55000-->
+              <!--</li>-->
+              <!--<li><i class="pe-7s-phone"></i>+1 (123) 456-7890</br>-->
+                <!--+2 (123) 456-7890-->
+              <!--</li>-->
+              <!--<li><i class="pe-7s-mail"></i><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>-->
+              <!--<li><i class="pe-7s-look"></i><a href="#">www.yoursite.com</a></li>-->
+            <!--</ul>-->
+
+          <!--</div>-->
+
+          <!--&lt;!&ndash; /.contact form &ndash;&gt;-->
+          <!--<div class="col-sm-7 contact-right">-->
+            <!--<form method="POST" id="contact-form" class="form-horizontal" action="contactengine.php" onSubmit="alert('Thank you for your feedback!');">-->
+              <!--<div class="form-group">-->
+                <!--<input type="text" name="Name" id="Name" class="form-control wow fadeInUp" placeholder="Name" required/>-->
+              <!--</div>-->
+              <!--<div class="form-group">-->
+                <!--<input type="text" name="Email" id="Email" class="form-control wow fadeInUp" placeholder="Email" required/>-->
+              <!--</div>-->
+              <!--<div class="form-group">-->
+                <!--<textarea name="Message" rows="20" cols="20" id="Message" class="form-control input-message wow fadeInUp"  placeholder="Message" required></textarea>-->
+              <!--</div>-->
+              <!--<div class="form-group">-->
+                <!--<input type="submit" name="submit" value="Submit" class="btn btn-success wow fadeInUp" />-->
+              <!--</div>-->
+            <!--</form>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
