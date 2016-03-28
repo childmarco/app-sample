@@ -14,8 +14,13 @@
 ActiveRecord::Schema.define(version: 20160327154903) do
 
   create_table "t_users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "usEmail",            limit: 50,   null: false
+    t.string   "usPass",             limit: 50,   null: false
+    t.string   "usUserInfo",         limit: 1000
+    t.datetime "usWithdrawalDate"
+    t.string   "usWithdrawalReason", limit: 1024
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end

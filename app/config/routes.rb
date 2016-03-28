@@ -61,7 +61,7 @@ Rails.application.routes.draw do
       get :index
       get :signin
       post :signup
-      get :signup
+      # get :signup
     end
   end
 

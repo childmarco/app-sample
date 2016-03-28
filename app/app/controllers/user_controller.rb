@@ -23,6 +23,10 @@ class UserController < ApplicationController
     # key  = SecureRandom.urlsafe_base64(24)
     # pass = Digest::SHA1.hexdigest(params[:password] + Settings.salt)
 
+    TUser.new(:usEmail => params[:email],
+              :usPass  => params[:password]
+    ).save
+
 
     render text: 'sign up view.'
 
