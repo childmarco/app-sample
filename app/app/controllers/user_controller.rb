@@ -39,7 +39,8 @@ class UserController < ApplicationController
 
 
 
-    render text: 'sign in view.'
+    render :signin, layout: 'top' and return
+
 
 
 
